@@ -9,7 +9,7 @@ import csv
 Total_Months = 0
 Net_Profit = 0
 Greatest_Increase_Profits = 0
-Greatest_Decrease-Losses = 0
+Greatest_Decrease_Losses = 0
 Month_changes = []
 Avg_Changes = []
 Date = []
