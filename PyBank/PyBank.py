@@ -13,8 +13,9 @@ Total_Months = 0
 Net_Profit = 0
 Greatest_Increase_Profits = 0
 Greatest_Decrease_Losses = 0
-Month_changes = []
-Avg_Changes = []
+Monthly_changes = []
+Greatest_Month_Increase = []
+Greatest_Decrease_Month = []
 CountofMonths = []
 
 
@@ -29,14 +30,24 @@ with open(PyBankcsv, newline='') as csvfile:
 
 # calculate total number of months
 previous_row = int(row[1])
-total_months += 1
+Total_Months += 1
 
-    for row in CSVreader:
-        count = count + 1
-        print(row)
-        print(row[0])
-        print(row[0],row[1],row[2],)
+# Amount of Profit/Losses - Net
+Net_Profit += int(row[1])
+
+# Greatest increase 
+Greatest_Increase_Profits = int(row[1])
+
+# Greatest increase monthly
+Greatest_Month_Increase = row[0]
+
+# read each row after header
+    for row in csvreader:
+    
+        # number of months in data
+        Total_Months += 1 
+        
 
     
-# Set variable for output file
+# Set variable for output 
 output_file = os.path.join("Final_Analysis.txt")
