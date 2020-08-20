@@ -41,27 +41,27 @@ with open(PyBankcsv, newline='') as csvfile:
     
 
 # read each row
-for row in csvreader:
+    for row in csvreader:
 
-    Total_Months += 1
-    net_amount += int(row[1])
+        Total_Months += 1
+        Net_Profit += int(row[1])
 
-    # change from month to month
-    change_revenue = int(row[1]) - previous_row
-    Monthly_changes.append(revenue_change)
-    previous_row = int(row[1])
-    CountofMonths.append(row[0])
+        # change from month to month
+        revenue_change = int(row[1]) - previous_row
+        Monthly_changes.append(revenue_change)
+        previous_row = int(row[1])
+        CountofMonths.append(row[0])
 
-    # greatest increase
-    if int(row[1]) > Greatest_Increase_Profits:
-        Greatest_Increase_Profits = int(row[1])
-        Greatest_Month_Increase = row[0]
+        # greatest increase
+        if int(row[1]) > Greatest_Increase_Profits:
+            Greatest_Increase_Profits = int(row[1])
+            Greatest_Month_Increase = row[0]
 
 
-    # greatest decrease
-    if int(row[1]) < Greatest_Decrease_Losses:
-        Greatest_Decrease_Losses = int(row[1])
-        Greatest_Month_Decrease = row[0]
+        # greatest decrease
+        if int(row[1]) < Greatest_Decrease_Losses:
+            Greatest_Decrease_Losses = int(row[1])
+            Greatest_Month_Decrease = row[0]
 
     
 
@@ -73,25 +73,26 @@ lowest = min(Monthly_changes)
 
 # output
     
-#file to write to   
-output_file = os.path.join("Final_Analysis_PyBank.txt")
-
-
-
 # print out
 print(f"Financial Analysis")
 print(f"-----------------------------------------")
 print(f"Total Months: {Total_Months}")
-print(f"Total: ${net_amount}")
+print(f"Total: ${Net_Profit}")
 print(f"Average Change: ${average_change:.2f}")
 print(f"Greatest Increase in Profits:, {Greatest_Month_Increase},(${highest})")
 print(f"Greatest Decrease in Profits:, {Greatest_Month_Decrease}, (${lowest})")
 
+
+#file to write to   
+output_file = os.path.join('.', 'Analysis', 'Final_Analysis_PyBank.txt')
+
+with open(output_file, 'w',) as txtfile:
+
 # write new data
-txtfile.write(f"Financial Analysis\n")
-txtfile.write(f"-----------------------------------\n")
-txtfile.write(f"Total Months: ${Total_Months}\n")
-txtfile.write(f"Total: ${net_amount}\n")
-txtfile.write(f"Average Change: ${average_change}\n")
-txtfile.write(f"Greatest Increase in Profits:, {Greatest_Month_Increase}, (${highest})\n")
-txtfile.write(f"Greatest Decrease in Profits:, {Greatest_Month_Decrease}, (${lowest})\n")
+    txtfile.write(f"Financial Analysis\n")
+    txtfile.write(f"-----------------------------------\n")
+    txtfile.write(f"Total Months: ${Total_Months}\n")
+    txtfile.write(f"Total: ${Net_Profit}\n")
+    txtfile.write(f"Average Change: ${average_change}\n")
+    txtfile.write(f"Greatest Increase in Profits:, {Greatest_Month_Increase}, (${highest})\n")
+    txtfile.write(f"Greatest Decrease in Profits:, {Greatest_Month_Decrease}, (${lowest})\n")
