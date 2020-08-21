@@ -22,7 +22,7 @@ with open(PyPollcsv, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     # read header row first
     csv_header = next(csvreader)
-    row = next(csv reader)
+    row = next(csvreader)
 
     # read each row of data 
     for row in csvreader:
@@ -47,11 +47,26 @@ with open(PyPollcsv, newline='') as csvfile:
                 votes_won = candidates[key]
 
 # print outs
-
+# print out to python
 print("Election Results")
 print("------------------------------------------------")
 print("Total Votes: " + str(Total_Votes))
 print("------------------------------------------------")
-print(key + )
+print(key + ":" "+ str(candidates_percent_vote[key])
+print
 
+# path to write txt file to 
+output_file = os.path.join(',', 'Analysis', 'Final_Analysis_PyPoll.txt')
 
+with open(output_file, 'w',) as txtfile:
+
+# write to txt file
+    txtfile.write(f"Election Results\n")
+    txtfile.write(f"-------------------------\n")
+    txtfile.write(f"Total Votes: {Total_Votes}\n")
+    txtfile.write(f"-------------------------\n")
+    txtfile.write(f"Kahn: {kahn_percent:.%}({khan_votes}")\n")
+    txtfile.write(f"Correy: {correy_percent:.%} ({correy_votes}\n")
+    txtfile.write(f"Li: {li_percent:.%}({li_votes})\n")
+    txtfile.write(f"O'Tooley: {otooley_percent:.%}({otooley_votes})\n")
+    txtfile.write(f"--------------------------\n")
