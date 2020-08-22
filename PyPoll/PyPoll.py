@@ -6,7 +6,7 @@ import os
 import csv
 
 # set the path for the data file
-PyPollcsv = os.path.join('.', 'Resources', 'election_data')
+PyPollcsv = os.path.join('.', 'Resources', 'election_data.csv')
 
 # Set Variables
 Total_Votes = 0
