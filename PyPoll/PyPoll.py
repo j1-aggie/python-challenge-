@@ -46,7 +46,7 @@ with open(PyPollcsv, newline='') as csvfile:
     otooley_votes = otooley_votes / Total_Votes
 
     # calculate winner of election
-    winner_name = max(khan_votes, correy_votes, li_votes, otooley_votes)
+    winner = max(khan_votes, correy_votes, li_votes, otooley_votes)
 
 
     if winner == khan_votes:
@@ -62,12 +62,12 @@ with open(PyPollcsv, newline='') as csvfile:
 # print out to python
 print(f"Election Results")
 print(f"------------------------------------------------")
-print(f"Total Votes: {total_votes}")
+print(f"Total Votes: {Total_Votes}")
 print(f"------------------------------------------------")
-print(f"Kahn: {kahn_percent:.%}({khan_votes})")
-print(f"Correy: {correy_percent:.%}({correy_votes})")
-print(f"Li: {li_percent:.%}({li_votes})")
-print(f"O'Tooley: {otooley_percent:.%}({otooley_votes})")
+print(f"Kahn: {kahn_percent:.1%}({khan_votes})")
+print(f"Correy: {correy_percent:.1%}({correy_votes})")
+print(f"Li: {li_percent:.1%}({li_votes})")
+print(f"O'Tooley: {otooley_percent:.1%}({otooley_votes})")
 print(f"-----------------------------------------------")
 print(f"Winner: {winner_name}")
 print(f"-----------------------------------------------")
@@ -82,8 +82,8 @@ with open(output_file, 'w',) as txtfile:
     txtfile.write(f"-------------------------\n")
     txtfile.write(f"Total Votes: ${Total_Votes}\n")
     txtfile.write(f"-------------------------\n")
-    txtfile.write(f"Kahn: {kahn_percent:.%}({khan_votes})\n")
-    txtfile.write(f"Correy: {correy_percent:.%} ({correy_votes})\n")
-    txtfile.write(f"Li: {li_percent:.%}({li_votes})\n")
-    txtfile.write(f"O'Tooley: {otooley_percent:.%}({otooley_votes})\n")
+    txtfile.write(f"Kahn: {kahn_percent:.1%}({khan_votes})\n")
+    txtfile.write(f"Correy: {correy_percent:.1%} ({correy_votes})\n")
+    txtfile.write(f"Li: {li_percent:.1%}({li_votes})\n")
+    txtfile.write(f"O'Tooley: {otooley_percent:.1%}({otooley_votes})\n")
     txtfile.write(f"--------------------------\n")
