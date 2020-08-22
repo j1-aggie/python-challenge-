@@ -18,6 +18,10 @@ The greatest increase in profits (date and amount) over the entire period.
 The greatest decrease in losses (date and amount) over the entire period.
 
 
+PyPoll
+
+![PyPoll pic](https://user-images.githubusercontent.com/66078772/90967422-98599a80-e4a4-11ea-8c6d-5652314915b7.PNG)
+
 PyPoll - Background
 
 
