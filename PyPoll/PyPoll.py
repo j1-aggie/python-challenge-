@@ -41,9 +41,9 @@ with open(PyPollcsv, newline='') as csvfile:
 
     # percentage of votes for each candidate
     kahn_percent = khan_votes / Total_Votes
-    correy_votes = correy_votes / Total_Votes
-    li_votes = li_votes / Total_Votes
-    otooley_votes = otooley_votes / Total_Votes
+    correy_percent = correy_votes / Total_Votes
+    li_percent = li_votes / Total_Votes
+    otooley_percent = otooley_votes / Total_Votes
 
     # calculate winner of election
     winner = max(khan_votes, correy_votes, li_votes, otooley_votes)
@@ -73,7 +73,7 @@ print(f"Winner: {winner_name}")
 print(f"-----------------------------------------------")
 
 # path to write txt file to 
-output_file = os.path.join(',', 'Analysis', 'Final_Analysis_PyPoll.txt')
+output_file = os.path.join('.', 'Analysis', 'Final_Analysis_PyPoll.txt')
 
 with open(output_file, 'w',) as txtfile:
 
